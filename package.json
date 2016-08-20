@@ -1,0 +1,44 @@
+{
+  "name": "stone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenjiangsong/stone.git"
+  },
+  "keywords": [
+    "stone"
+  ],
+  "author": "chenjiangsong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenjiangsong/stone/issues"
+  },
+  "homepage": "https://github.com/chenjiangsong/stone#readme",
+  "dependencies": {
+    "koa": "^2.0.0",
+    "vue": "^2.0.0-rc.2",
+    "vue-router": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-runtime": "^6.11.6",
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "jade": "^1.11.0",
+    "node-sass": "^3.8.0",
+    "vue-hot-reload-api": "^2.0.6",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "^8.5.3",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
