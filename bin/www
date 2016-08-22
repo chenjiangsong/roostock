@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var app = require('../koa/app.views.js')
+var http = require('http')
+var server = http.createServer(app.callback())
+
+app.listen(3000)
