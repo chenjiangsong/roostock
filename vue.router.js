@@ -13,5 +13,5 @@ router.get('*', async (ctx, next) => {
   })
 })
 
-
+// exports default router
 module.exports = router

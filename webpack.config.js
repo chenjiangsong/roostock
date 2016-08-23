@@ -9,13 +9,17 @@ import px2rem                from 'postcss-px2rem'
 export default {
   watch: true,
 
+  // debug: true,
+
+  devtool: 'source-map',
+
   entry: {
-    vue_app: path.resolve('./App/vue/index.js'),
-    vue_common: [
+    vue_app: path.resolve('./src/vue/index.js'),
+    common: [
       'vue',
       'underscore',
       'util',
-      'vueRouter'
+      'vue-router'
     ]
   },
 
@@ -27,8 +31,7 @@ export default {
 
   resolve: {
     alias: {
-      util: path.resolve('./common/util.js'),
-      vueRouter: 'vue-router'
+      util: path.resolve('./src/common/util.js'),
     }
   },
 
@@ -36,21 +39,27 @@ export default {
     new webpack.ProvidePlugin({
       _: 'underscore',
       Vue: 'vue',
-      VueRouter: 'vue-router'
+      VueRouter: 'vue-router',
+      util: 'util'
     }),
-
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new WebpackNotifierPlugin({ excludeWarnings: true, alwaysNotify: true })
   ],
 
   module: {
     loaders: [
+      {
+        test: /\.js[x]?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.vue$/,
         loader: 'vue'
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader!postcss-loader"
+        loader: "style-loader!css-loader!postcss-loader!sass-loader"
       }
     ]
   },
