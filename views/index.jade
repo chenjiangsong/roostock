@@ -2,9 +2,10 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/static/style.css')
+    script(src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js")
+    link(rel='stylesheet', href='/static/#{tag}_app.css')
   body
-    h1 呵呵
-    p Welcome to
-    p hehe cjs
+    div#app
+      router-view 
     script(src='/static/common.js')
+    script(src='/static/#{tag}_app.js')
