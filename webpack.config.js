@@ -1,17 +1,20 @@
-import path from 'path'
-import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
+
+import path                  from 'path'
+import webpack               from 'webpack'
+import ExtractTextPlugin     from 'extract-text-webpack-plugin'
 import WebpackNotifierPlugin from 'webpack-notifier'
+import px2rem                from 'postcss-px2rem'
+
 
 export default {
   watch: true,
 
   entry: {
-    vue_bundle: path.resolve('./vue.router.js'),
+    vue_app: path.resolve('./App/vue/index.js'),
     vue_common: [
       'vue',
       'underscore',
-      'h5Common',
+      'util',
       'vueRouter'
     ]
   },
@@ -24,7 +27,7 @@ export default {
 
   resolve: {
     alias: {
-      h5Common: path.resolve('./common/h5.common.js'),
+      util: path.resolve('./common/util.js'),
       vueRouter: 'vue-router'
     }
   },
@@ -44,10 +47,16 @@ export default {
       {
         test: /\.vue$/,
         loader: 'vue'
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader!postcss-loader"
       }
     ]
   },
-
+  postcss: function() {
+    return [px2rem({remUnit: 75})];
+  },
   vue: {
     loaders: {
       css: ExtractTextPlugin.extract('css'),
