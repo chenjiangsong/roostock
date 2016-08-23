@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "views": "nodemon koa/app.views.js"
+    "start": "nodemon bin/run"
   },
   "repository": {
     "type": "git",

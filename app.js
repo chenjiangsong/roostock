@@ -1,16 +1,20 @@
 import koa from 'koa'
 import router from 'koa-router'
 import mount from 'koa-mount'
-import static from 'koa-static'
+import serve from 'koa-static'
 import views from 'koa-views'
 
-const app = new koa()
-app.use(views(__dirname+'/views'), {
-  extension:'jade'
-})
+import vuePage from './vue.router.js'
 
-app.use(ctx => {
-  ctx.body = 'Hello World';
-});
+const app = new koa()
+const staticPath = serve(`${__dirname}/public`)
+
+app.use(mount('/static', staticPath))
+
+app.use(views(__dirname + '/views', {
+  extension:'jade'
+}))
+
+app.use(vuePage.routes(),vuePage.allowedMethods())
 
 module.exports = app

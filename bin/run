@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+// import runkoa from 'runkoa'
 
 var current_path = process.cwd();
-
-require('runkoa')(current_path + '/bin/www' )
+// var runkoa = runkoa()
+// runkoa(current_path + '/bin/www')
+require('runkoa')(current_path + '/bin/www')
