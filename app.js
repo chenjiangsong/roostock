@@ -1,4 +1,4 @@
-import koa from 'koa'
+import Koa from 'koa'
 import router from 'koa-router'
 import mount from 'koa-mount'
 import serve from 'koa-static'
@@ -6,8 +6,8 @@ import views from 'koa-views'
 
 import vuePage from './vue.router.js'
 
-const app = new koa()
-const staticPath = serve(`${__dirname}/public`)
+const app = new Koa()
+const staticPath = serve(`${__dirname}/dist`)
 
 app.use(mount('/static', staticPath))
 
