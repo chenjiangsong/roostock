@@ -1,9 +1,9 @@
 import gulp from 'gulp'
-import webpack from './webpack.config.js'
+import webpack from 'webpack'
+import config from './webpack.config.js'
 
 gulp.task('default', () => {
-  console.log('gulp success')
-  console.log(webpack.a);
+  webpack(config,logback)
 })
 
 
