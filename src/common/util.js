@@ -1,13 +1,11 @@
 
-Vue.use(VueRouter)
 
 module.exports = {
-  initVueRouter() {
-    const opt = {
-      history: true,
-      saveScrollPosition: true,
-      root:'/'
+  vueRouterDefOpts() {
+    const defOpt = {
+      mode: 'history',
+      base: __dirname
     }
-    return new VueRouter(opt)
+    return defOpt
   }
 }

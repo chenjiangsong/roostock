@@ -1,12 +1,17 @@
 
 Vue.use(VueRouter)
 
-const router = util.initVueRouter()
-console.log(router);
-router.map({
-    '/':{
-      name:'index',
-      component:require('./index.vue')
+const routes = {
+  routes:[
+    {
+      path: '/',
+      name: 'index',
+      component: require('./index.vue')
     }
-})
+  ]
+}
+
+const defOpt = util.vueRouterDefOpts()
+const router = new VueRouter(Vue.util.extend(defOpt,routes))
+
 module.exports = router
