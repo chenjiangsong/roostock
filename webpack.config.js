@@ -17,9 +17,10 @@ export default {
     vue_app: path.resolve('./src/vue/index.js'),
     common: [
       'vue',
-      'underscore',
+      'lodash',
       'util',
-      'vue-router'
+      'vue-router',
+      'animate.css/animate.css'
     ]
   },
 
@@ -32,12 +33,13 @@ export default {
   resolve: {
     alias: {
       util: path.resolve('./src/common/util.js'),
+      vue: 'vue/dist/vue.js'
     }
   },
 
   plugins: [
     new webpack.ProvidePlugin({
-      _: 'underscore',
+      _: 'lodash',
       Vue: 'vue',
       VueRouter: 'vue-router',
       util: 'util'
@@ -59,17 +61,24 @@ export default {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader!postcss-loader!sass-loader"
+        loader: ExtractTextPlugin.extract('style', 'css')
+        // loader: 'style!css'
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+        // loader: 'style!css!postcss!sass',
+        exclude: /node_modules/
       }
     ]
   },
   postcss: function() {
-    return [px2rem({remUnit: 75})];
+    return [px2rem({remUnit: 75})]
   },
   vue: {
     loaders: {
-      css: ExtractTextPlugin.extract('css'),
-      sass: ExtractTextPlugin.extract("css!sass")
+      css: ExtractTextPlugin.extract('style', 'css'),
+      scss: ExtractTextPlugin.extract('style', 'css!postcss!sass')
     }
   }
 }

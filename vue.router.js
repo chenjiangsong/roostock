@@ -11,6 +11,7 @@ router.get('*', async (ctx, next) => {
   await ctx.render('index', {
     tag:'vue'
   })
+
 })
 
 // exports default router
