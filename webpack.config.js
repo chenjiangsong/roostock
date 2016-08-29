@@ -15,12 +15,17 @@ export default {
 
   entry: {
     vue_app: path.resolve('./src/vue/index.js'),
-    common: [
+    vue_common: [
       'vue',
       'lodash',
       'util',
       'vue-router',
-      'animate.css/animate.css'
+      'animate.css',
+      'normalize.css',
+      'weui',
+      'semantic-ui/dist/components/reset.min.css',
+      'semantic-ui/dist/components/site.min.css'
+      // 'semantic-ui/dist/semantic.min.js'
     ]
   },
 
@@ -54,6 +59,10 @@ export default {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg)$/,
+        loader: "file-loader?name=[name]_[sha512:hash:base64:7].[ext]"
       },
       {
         test: /\.vue$/,

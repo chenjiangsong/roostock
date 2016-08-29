@@ -3,10 +3,7 @@
     content
     <router-link :to="{name:'test'}">test</router-link>
     <router-link :to="{name:'test1'}">test1</router-link>
-    <transition
-    enter-active-class="animated slideInRight"
-    leave-active-class="animated slideOutLeft"
-    >
+    <transition name="fade">
         <router-view></router-view>
     </transition>
   </div>
