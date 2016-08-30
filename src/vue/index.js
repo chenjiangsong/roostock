@@ -1,9 +1,9 @@
 
 import router from './router.js'
-import App from './layout/App.vue'
+// import layout from './layout.vue'
+import App from './App.vue'
 
-Vue.component('Cell')
 new Vue({
   router,
-  render: v => v(App)
+  render: h => h(App)
 }).$mount('#app')

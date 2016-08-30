@@ -1,3 +1,5 @@
+import demoIndex from './demo/index.vue'
+import input from './demo/input.vue'
 
 Vue.use(VueRouter)
 
@@ -5,23 +7,13 @@ const routes = {
   routes:[
     {
       path: '/vue',
-      component: require('./layout/content.vue'),
-      // components: {
-      //     header:require('./layout/header.vue'),
-      //     content:require('./layout/content.vue')
-      // },
-      children: [
-        {
-          path: 'test',
-          name: 'test',
-          component: require('./components/test.vue')
-        },
-        {
-          path: 'test1',
-          name: 'test1',
-          component: require('./components/test1.vue')
-        }
-      ]
+      name: 'index',
+      component: demoIndex,
+    },
+    {
+      path: '/vue/components/input',
+      name: 'input',
+      component: input
     }
   ]
 }

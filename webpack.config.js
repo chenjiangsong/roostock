@@ -75,7 +75,7 @@ export default {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css!sass'),
         // loader: 'style!css!postcss!sass',
         exclude: /node_modules/
       }
@@ -87,7 +87,7 @@ export default {
   vue: {
     loaders: {
       css: ExtractTextPlugin.extract('style', 'css'),
-      scss: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+      scss: ExtractTextPlugin.extract('style', 'css!sass')
     }
   }
 }

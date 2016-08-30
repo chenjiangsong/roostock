@@ -65,6 +65,7 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1",
-    "webpack-notifier": "^1.4.0"
+    "webpack-notifier": "^1.4.0",
+    "yargs": "^5.0.0"
   }
 }
