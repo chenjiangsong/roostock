@@ -23,7 +23,7 @@ export default {
       'vue-router',
       // 'animate.css',
       'normalize.css',
-      'weui',
+      'site',
       'semantic-ui/dist/components/reset.min.css',
       // 'semantic-ui/dist/components/site.min.css'
       // 'semantic-ui/dist/semantic.min.js'
@@ -39,7 +39,9 @@ export default {
   resolve: {
     alias: {
       util: path.resolve('./src/common/util.js'),
-      vue: 'vue/dist/vue.js'
+      vue: 'vue/dist/vue.js',
+      weui: path.resolve('./src/vue/styles/weui'),
+      site: path.resolve('./src/vue/styles/site.css')
     }
   },
 
@@ -77,6 +79,11 @@ export default {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!sass'),
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract('style', 'css!less'),
+        exclude: /node_modules/
       }
     ]
   },
@@ -86,7 +93,8 @@ export default {
   vue: {
     loaders: {
       css: ExtractTextPlugin.extract('style', 'css'),
-      scss: ExtractTextPlugin.extract('style', 'css!sass')
+      scss: ExtractTextPlugin.extract('style', 'css!sass'),
+      less: ExtractTextPlugin.extract('style', 'css!less')
     }
   }
 }

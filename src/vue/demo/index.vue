@@ -1,15 +1,18 @@
 <template>
   <div class="demo-wrap">
-    <router-link :to="{name:'input'}">
-      <cell>input</cell>
-    </router-link>
+    <group>
+      <router-link :to="{name:'input'}" class="ui-cell">input</router-link>
+      <router-link :to="{name:'input'}" class="ui-cell">input</router-link>
+    </group>
   </div>
 </template>
 <script>
   import Cell from '../components/Cell'
+  import Group from '../components/Group'
   export default {
     components: {
-      Cell
+      Cell,
+      Group
     }
   }
 </script>

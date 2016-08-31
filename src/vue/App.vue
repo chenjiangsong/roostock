@@ -18,10 +18,10 @@
 .app-wrap{
   font-size: 20px;/*px*/
   header{
-    height: 100px;
+    height: 64px;
     background-color: #4c9da0;
     color:#fff;
-    line-height: 100px;
+    line-height: 64px;
     text-align: center;
     font-size: 36px;/*px*/
   }

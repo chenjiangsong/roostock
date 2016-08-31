@@ -53,6 +53,8 @@
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "jade": "^1.11.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.10.1",
     "postcss-px2rem": "^0.3.0",

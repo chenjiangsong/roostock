@@ -3,16 +3,29 @@
     <slot></slot>
   </div>
 </template>
-<style lang="scss">
-  .ui-cell{
-    padding:10px 15px;/*px*/
-    /*background-color: #fff*/
+<script>
+// export default {
+//   props: {
+//       title: String,
+//       desc: String
+//     }
+//   }
+</script>
+<style lang="less">
+/* @import "../../styles/weui/widget/weui_cell/weui_cell_global"; */
+@import "../../styles/mixin";
+.ui-cell{
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  background-color: #fff;
+  &:before{
+    .setBorderTop;
+  }
+  &:first-child{
     &:before{
-      content:' ';
-      border-top: 1px solid #ccc;
-      position: absolute;
-      width: 100%;
-      height: 1px;
+      display: none;
     }
   }
+}
 </style>
