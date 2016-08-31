@@ -7,6 +7,7 @@ import px2rem                from 'postcss-px2rem'
 
 
 export default {
+
   watch: true,
 
   // debug: true,
@@ -20,11 +21,11 @@ export default {
       'lodash',
       'util',
       'vue-router',
-      'animate.css',
+      // 'animate.css',
       'normalize.css',
       'weui',
       'semantic-ui/dist/components/reset.min.css',
-      'semantic-ui/dist/components/site.min.css'
+      // 'semantic-ui/dist/components/site.min.css'
       // 'semantic-ui/dist/semantic.min.js'
     ]
   },
@@ -71,12 +72,10 @@ export default {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css')
-        // loader: 'style!css'
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!sass'),
-        // loader: 'style!css!postcss!sass',
         exclude: /node_modules/
       }
     ]

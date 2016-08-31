@@ -14,14 +14,12 @@
   </div>
 </template>
 <style lang="scss">
-body{
-  background-color: #ebeff0;
-}
+
 .app-wrap{
-  font-size: 32px;/*px*/
+  font-size: 20px;/*px*/
   header{
     height: 100px;
-    background-color: #34352c;
+    background-color: #4c9da0;
     color:#fff;
     line-height: 100px;
     text-align: center;

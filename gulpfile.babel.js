@@ -1,7 +1,8 @@
 import gulp from 'gulp'
 import webpack from 'webpack'
 import gutil from 'gulp-util'
-import config from './webpack.config.js'
+import vueConfig from './build/webpack.vue.config.js'
+import baseConfig from './build/webpack.base.config.js'
 import yargs from 'yargs'
 
 const argv = yargs.argv
@@ -9,14 +10,18 @@ const argv = yargs.argv
 gulp.task('default', () => {
   const dev = argv.dev
   if (dev) {
-    config.plugins.concat(new webpack.optimize.UglifyJsPlugin({
+    vueConfig.plugins.concat(new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
     }))
   }
 
-  webpack(config,logback)
+  webpack(vueConfig, logback)
+})
+
+gulp.task('base', () => {
+    webpack(baseConfig, logback)
 })
 
 
